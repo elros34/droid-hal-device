@@ -562,6 +562,7 @@ install -m 755 -D %{android_root}/system/core/libsparse/img2simg %{buildroot}/%{
 cp -a %{android_root}/out/target/product/%{device}/system/bin/updater $RPM_BUILD_ROOT/boot/update-binary
 cp -a %{android_root}/out/target/product/%{device}/hybris-updater-script $RPM_BUILD_ROOT/boot
 cp -a %{android_root}/out/target/product/%{device}/hybris-updater-unpack.sh $RPM_BUILD_ROOT/boot
+cp -a %{android_root}/out/target/product/%{device}/utilities/busybox $RPM_BUILD_ROOT/boot
 %endif
 
 rsync -av %{android_root}/out/target/product/%{device}/root/. $RPM_BUILD_ROOT --exclude bin --exclude etc --exclude 'init.zygote*'
@@ -1055,6 +1056,7 @@ done
 /boot/update-binary
 /boot/hybris-updater-script
 /boot/hybris-updater-unpack.sh
+/boot/busybox
 %endif
 %endif
 
